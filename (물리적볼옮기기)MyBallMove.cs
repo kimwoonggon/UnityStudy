@@ -23,13 +23,13 @@ public class MyBallMove : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //1. Ãæ°İ·® ÁÖ¾î °ø ¿òÁ÷ÀÌ±â.
+        //1. ì¶©ê²©ëŸ‰ ì£¼ì–´ ê³µ ì›€ì§ì´ê¸°.
         rigid = GetComponent<Rigidbody>();
         Vector3 vec = new Vector3(Input.GetAxisRaw("Horizontal"),
             0, Input.GetAxisRaw("Vertical"));
 
         rigid.AddForce(vec, ForceMode.Impulse);
-        //2. È¸Àü·Â
+        //2. íšŒì „ë ¥
         ///rigid = GetComponent<Rigidbody>();
         //rigid.AddTorque(Vector3.up);
     }
