@@ -13,7 +13,7 @@ public class OtherBall : MonoBehaviour
         mat = mesh.material;
 
     }
-    // ¹°¸®ÀûÀÎ Ãæµ¹ÀÌ °¡ÇØÁ³À» ¶§ ½ÃÀÛÇÏ´Â ÇÔ¼ö
+    // ë¬¼ë¦¬ì ì¸ ì¶©ëŒì´ ê°€í•´ì¡Œì„ ë•Œ ì‹œì‘í•˜ëŠ” í•¨ìˆ˜
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.name == "MyBall")
