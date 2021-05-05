@@ -1,0 +1,36 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class OtherBall : MonoBehaviour
+{
+    MeshRenderer mesh;
+    Material mat;
+    // Start is called before the first frame update
+    void Start()
+    {
+        mesh = GetComponent<MeshRenderer>();
+        mat = mesh.material;
+
+    }
+    // 물리적인 충돌이 가해졌을 때 시작하는 함수
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.name == "MyBall")
+            mat.color = new Color(0,0,0);
+    }
+    private void OnCollisionStay(Collision collision)
+    {
+        
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        
+    }
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+}
