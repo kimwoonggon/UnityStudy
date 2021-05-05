@@ -26,7 +26,8 @@ public class OtherBall : MonoBehaviour
 
     private void OnCollisionExit(Collision collision)
     {
-        
+        if (collision.gameObject.name == "MyBall")
+            mat.color = new Color(1, 1, 1);
     }
     // Update is called once per frame
     void Update()
