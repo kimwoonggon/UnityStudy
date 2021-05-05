@@ -9,6 +9,8 @@ public class MyBallMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        rigid = GetComponent<Rigidbody>();
         //rigid = 
         //rigid.velocity = new Vector3(2,10,3);
         //if (Input.GetButtonDown("Jump"))
@@ -24,7 +26,7 @@ public class MyBallMove : MonoBehaviour
     private void FixedUpdate()
     {
         //1. 충격량 주어 공 움직이기.
-        rigid = GetComponent<Rigidbody>();
+        
         Vector3 vec = new Vector3(Input.GetAxisRaw("Horizontal"),
             0, Input.GetAxisRaw("Vertical"));
 
@@ -33,4 +35,12 @@ public class MyBallMove : MonoBehaviour
         ///rigid = GetComponent<Rigidbody>();
         //rigid.AddTorque(Vector3.up);
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.name == "Cube")
+            rigid.AddForce(Vector3.up * 100, ForceMode.Impulse);
+    }
+
+
 }
